@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'ariel', sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
@@ -20,27 +20,32 @@ body {
     top: 0;
     z-index: 1000;
 }
+
 /* Logo Section */
 .logo-section {
     flex: 1;
 }
+
 .logo {
     width: 200px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
 }
+
 .nav ul {
     display: flex;
     list-style: none;
     gap: 15px;
 }
+
 .nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 400;
     transition: color 0.3s;
 }
+
 .nav ul li a:hover {
     color: #ccc;
 }
@@ -51,11 +56,13 @@ body {
     height: 100vh; /* Full viewport height */
     background: url('https://raw.githubusercontent.com/TITANFX96/titan-corp/main/home-page.png') no-repeat center center/cover; 
     display: flex;
-    align-items:top;
+    align-items: flex-start; /* Align items to the top */
     justify-content: center;
     text-align: center;
     color: white;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0); /* Adds depth to the background */
+    background-size: cover;
+    background-position: center;
 }
 
 /* Hero Content */
@@ -85,10 +92,12 @@ body {
     padding: 50px 20px;
     text-align: center;
 }
+
 .about h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
+
 .about p {
     font-size: 1rem;
     line-height: 1.6;
@@ -100,11 +109,13 @@ body {
     background: linear-gradient(to bottom, #000000,#000000, #c4c4c4, #000000, #000000); /* Gradient background */
     text-align: center;
 }
+
 .companies h2 {
     font-size: 2rem;
     margin-bottom: 30px;
     color: #fff;
 }
+
 .company-cards {
     display: flex;
     justify-content: center;
@@ -119,6 +130,7 @@ body {
     height: 200px;
     position: relative;
 }
+
 .card-inner {
     position: relative;
     width: 100%;
@@ -126,9 +138,11 @@ body {
     transform-style: preserve-3d;
     transition: transform 0.8s;
 }
+
 .card:hover .card-inner {
     transform: rotateY(180deg); /* Flips the card */
 }
+
 .card-front,
 .card-back {
     position: absolute;
@@ -143,25 +157,30 @@ body {
     border-radius: 10px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+
 .card-front {
     background: #f0f0f0;
     color: #333;
 }
+
 .card-back {
     background: #333;
     color: #fff;
     transform: rotateY(180deg); /* Initially hides the back side */
 }
+
 .card-front h3, 
 .card-back h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
+
 .card-front p, 
 .card-back p {
     font-size: 1rem;
     margin-bottom: 15px;
 }
+
 .card-front a,
 .card-back a {
     display: inline-block;
@@ -172,6 +191,7 @@ body {
     border-radius: 5px;
     transition: background 0.3s;
 }
+
 .card-front a:hover,
 .card-back a:hover {
     background: #8d8c8c;
@@ -183,10 +203,12 @@ body {
     background: #f9f9f9;
     text-align: center;
 }
+
 .contact h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
+
 .contact form {
     max-width: 500px;
     margin: 0 auto;
@@ -194,6 +216,7 @@ body {
     flex-direction: column;
     gap: 15px;
 }
+
 .contact input, .contact textarea {
     padding: 10px;
     font-size: 1rem;
@@ -201,6 +224,7 @@ body {
     border-radius: 5px;
     width: 100%;
 }
+
 .contact button {
     padding: 10px 20px;
     background: #333;
@@ -210,6 +234,7 @@ body {
     cursor: pointer;
     transition: background 0.3s;
 }
+
 .contact button:hover {
     background: #000;
 }
@@ -258,4 +283,56 @@ body {
     background: #333;
     color: #fff;
     font-size: 0.9rem;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    /* Hero Section Adjustments */
+    .hero {
+        background-position: center center; /* Center the background */
+        height: 50vh; /* Reduce hero section height on mobile */
+    }
+
+    .hero-content {
+        padding: 40px; /* Reduce padding for smaller screens */
+    }
+
+    /* Adjust the Header */
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        width: 150px; /* Make the logo smaller on mobile */
+    }
+
+    .nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* Decrease font size for smaller screens */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Decrease font size for smaller screens */
+    }
+
+    .card {
+        width: 100%; /* Make the cards take full width on mobile */
+        height: auto; /* Allow the height to adjust based on content */
+    }
+
+    .contact form {
+        width: 100%;
+    }
+
+    /* Ensure buttons are appropriately sized on mobile */
+    .cta-button {
+        padding: 0.8rem 1.5rem; /* Increase padding for easier tapping */
+    }
 }
