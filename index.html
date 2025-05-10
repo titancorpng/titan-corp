@@ -137,6 +137,17 @@
       <p>&copy; 2024 Titan Corporation. All rights reserved.</p>
     </div>
   </footer>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  });
+</script>
 
 </body>
 </html>
