@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -6,147 +7,53 @@ body {
     background: #f9f9f9;
 }
 
-/\* Header Styling */
+/* Header */
 .header {
-background-color: var(--black);
-padding: 1rem 1rem;
-position: sticky;
-top: 0; /* Ensures it sticks to the top */
-height: 8rem;
-z-index: 1000; /* Keeps it on top of other content */
-display: grid;
-grid-template-columns: 1fr auto;
-align-items: center;
-transition: background-color 0.3s ease;
-width: 100%; /* Ensure header spans the entire width \*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(180deg, #000, #333);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/\* Logo Styling \*/
+.logo-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo {
-font-size: 1.5rem;
-color: var(--white);
-}
-
-/\* Navigation Container */
-.container {
-width: 90%;
-max-width: 1200px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr auto; /* Logo | Navigation \*/
-align-items: center;
-padding: 1rem 0;
-position: relative;
-}
-
-/\* Logo Styling \*/
-.logo img {
-width: 150px;
-height: auto;
-display: block;
-}
-
-/\* Main Navigation */
-.nav {
-width: 100%;
-display: flex;
-justify-content: flex-end;
-box-sizing: border-box;
-padding-right: 1rem; /* optional: small padding from screen edge \*/
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: none;
 }
 
 .nav ul {
-display: flex;
-list-style: none;
-margin: 0;
-padding: 0;
-gap: 1rem; /\* Consistent gap between items \*/
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 15px;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 .nav ul li a {
-color: var(--white);
-text-decoration: none;
-font-weight: bold;
-padding: 0.5rem;
-display: block;
-transition: all 0.2s ease;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
 }
 
-.nav ul li a\:hover {
-color: var(--silver);
-border-bottom: 2px solid var(--silver);
-}
-
-/\* Hamburger Menu */
-.hamburger {
-display: none;
-flex-direction: column;
-justify-content: space-between;
-width: 40px; /* Increased width */
-height: 28px; /* Increased height \*/
-padding: 0;
-margin: 0;
-cursor: pointer;
-background: transparent;
-border: none;
-z-index: 1001;
-position: relative;
-}
-
-.hamburger .bar {
-display: block;
-width: 100%;
-height: 4px; /\* Thicker bars */
-background-color: #c0c0c0; /* Changed to silver \*/
-border-radius: 2px;
-transition: all 0.3s ease;
-transform-origin: center;
-}
-
-/\* Mobile Styles */
-@media (max-width: 768px) {
-.container {
-grid-template-columns: 1fr 30px;
-padding: 0.5rem 1rem; /* Tighter padding \*/
-align-items: center;
-}
-
-.nav {
-position: static; /\* Fixes spacing issue \*/
-}
-
-.nav ul {
-display: none;
-flex-direction: column;
-gap: 0.5rem; /\* Tighter gap for mobile */
-position: absolute;
-top: 70px; /* Adjusted to match header height \*/
-left: 0;
-width: 100%;
-background-color: var(--black);
-padding: 1rem;
-box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-}
-
-.nav ul.active {
-display: flex;
-}
-
-.hamburger {
-display: flex;
-}
-
-/\* Hamburger animation */
-.hamburger.active .bar\:nth-child(1) {
-transform: translateY(10px) rotate(45deg); /* Adjusted for bigger size */
-}
-  
-.hamburger.active .bar\:nth-child(2) {
-opacity: 0;
-}
-  
-.hamburger.active .bar\:nth-child(3) {
-transform: translateY(-10px) rotate(-45deg); /* Adjusted for bigger size \*/
+.nav ul li a:hover {
+    color: #ccc;
 }
 
 /* Hero Section */
