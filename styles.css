@@ -10,7 +10,7 @@ body {
 /* Header */
 .header {
     display: flex;
-    height: 50px;
+    height: auto;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
@@ -19,11 +19,14 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
-/* Logo Section */
 .logo-section {
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo {
@@ -37,6 +40,10 @@ body {
     display: flex;
     list-style: none;
     gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 .nav ul li a {
@@ -50,25 +57,24 @@ body {
     color: #ccc;
 }
 
-/* Hero Section Styles */
+/* Hero Section */
 .hero {
     position: relative;
-    height: 100vh; /* Full viewport height */
-    background: url('https://raw.githubusercontent.com/TITANFX96/titan-corp/main/home-page.png') no-repeat center center/cover; 
+    height: 100vh;
+    background: url('https://raw.githubusercontent.com/TITANFX96/titan-corp/main/home-page.png') no-repeat center center/cover;
     display: flex;
-    align-items: flex-start; /* Align items to the top */
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
     color: white;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0); /* Adds depth to the background */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0);
     background-size: cover;
     background-position: center;
 }
 
-/* Hero Content */
 .hero-content {
-    position: relative; /* Ensures content sits on top of the background */
-    background: rgba(0, 0, 0, 0); /* Adds a semi-transparent overlay behind text */
+    position: relative;
+    background: rgba(0, 0, 0, 0);
     padding: 80px;
     border-radius: 8px;
     max-width: 600px;
@@ -76,7 +82,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
 }
 
-/* Hero Text */
 .hero-content h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
@@ -106,7 +111,7 @@ body {
 /* Companies Section */
 .companies {
     padding: 50px 20px;
-    background: linear-gradient(to bottom, #000000,#000000, #c4c4c4, #000000, #000000); /* Gradient background */
+    background: linear-gradient(to bottom, #000000, #000000, #c4c4c4, #000000, #000000);
     text-align: center;
 }
 
@@ -123,9 +128,9 @@ body {
     flex-wrap: wrap;
 }
 
-/* Flip Card Styling */
+/* Flip Cards */
 .card {
-    perspective: 1000px; /* Enables 3D perspective */
+    perspective: 1000px;
     width: 300px;
     height: 200px;
     position: relative;
@@ -140,7 +145,7 @@ body {
 }
 
 .card:hover .card-inner {
-    transform: rotateY(180deg); /* Flips the card */
+    transform: rotateY(180deg);
 }
 
 .card-front,
@@ -148,7 +153,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Hides one side when the other is visible */
+    backface-visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -166,7 +171,7 @@ body {
 .card-back {
     background: #333;
     color: #fff;
-    transform: rotateY(180deg); /* Initially hides the back side */
+    transform: rotateY(180deg);
 }
 
 .card-front h3, 
@@ -217,7 +222,8 @@ body {
     gap: 15px;
 }
 
-.contact input, .contact textarea {
+.contact input, 
+.contact textarea {
     padding: 10px;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -239,22 +245,21 @@ body {
     background: #000;
 }
 
-/* Social Media Links Styling */
+/* Social Media */
 .social-links {
     margin-top: 2rem;
     text-align: center;
-    display: flex; /* Use Flexbox for better alignment */
-    justify-content: center; /* Center the links horizontally */
-    flex-wrap: wrap; /* Allow wrapping if the row overflows on smaller screens */
-    gap: 1rem; /* Adds spacing between links */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .social-links h3 {
-    width: 100%; /* Ensures the heading is on its own row */
+    width: 100%;
     color: var(--silver);
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    text-align: center;
 }
 
 .social-icon {
@@ -267,7 +272,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    white-space: nowrap; /* Prevents the links from breaking into multiple lines */
+    white-space: nowrap;
 }
 
 .social-icon:hover {
@@ -285,54 +290,99 @@ body {
     font-size: 0.9rem;
 }
 
-/* Mobile Responsive Adjustments */
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+    .hero-content {
+        padding: 60px;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 768px) {
-    /* Hero Section Adjustments */
     .hero {
-        background-position: center center; /* Center the background */
-        height: 50vh; /* Reduce hero section height on mobile */
+        height: 60vh;
     }
 
     .hero-content {
-        padding: 40px; /* Reduce padding for smaller screens */
+        padding: 40px;
+        max-width: 90%;
     }
 
-    /* Adjust the Header */
     .header {
         flex-direction: column;
         align-items: center;
     }
 
     .logo {
-        width: 150px; /* Make the logo smaller on mobile */
+        width: 150px;
     }
 
     .nav ul {
-        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .company-cards {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem; /* Decrease font size for smaller screens */
-    }
-
-    .hero-content p {
-        font-size: 1rem; /* Decrease font size for smaller screens */
     }
 
     .card {
-        width: 100%; /* Make the cards take full width on mobile */
-        height: auto; /* Allow the height to adjust based on content */
+        width: 90%;
+        height: auto;
+    }
+
+    .card-inner {
+        min-height: 250px;
     }
 
     .contact form {
         width: 100%;
     }
+}
 
-    /* Ensure buttons are appropriately sized on mobile */
-    .cta-button {
-        padding: 0.8rem 1.5rem; /* Increase padding for easier tapping */
+@media (max-width: 480px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .about h2,
+    .companies h2,
+    .contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .about p,
+    .card-front p,
+    .card-back p,
+    .contact input,
+    .contact textarea {
+        font-size: 0.95rem;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+    }
+
+    .social-icon {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
     }
 }
